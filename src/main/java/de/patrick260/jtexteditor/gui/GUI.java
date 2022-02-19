@@ -23,7 +23,6 @@ import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.URL;
 
 public final class GUI extends JFrame {
 
@@ -33,6 +32,8 @@ public final class GUI extends JFrame {
     private static final String TITLE = "JTextEditor";
 
     private final JEditorPane editor;
+
+    private File saveTo;
 
 
     public GUI() {
@@ -120,6 +121,8 @@ public final class GUI extends JFrame {
 
                 editor.setPage(fileChooser.getSelectedFile().toURI().toURL());
 
+                saveTo = fileChooser.getSelectedFile();
+
             } catch (IOException e) {
 
                 e.printStackTrace();
@@ -132,7 +135,26 @@ public final class GUI extends JFrame {
 
     private void saveFile(final ActionEvent event) {
 
+        if (saveTo != null) {
 
+            try {
+
+                FileWriter writer = new FileWriter(saveTo);
+                writer.write(editor.getText());
+                writer.flush();
+                writer.close();
+
+            } catch (IOException e) {
+
+                e.printStackTrace();
+
+            }
+
+        } else {
+
+            saveFileAs(event);
+
+        }
 
     }
 
@@ -149,6 +171,8 @@ public final class GUI extends JFrame {
                 writer.write(editor.getText());
                 writer.flush();
                 writer.close();
+
+                saveTo = fileChooser.getSelectedFile();
 
             } catch (IOException e) {
 
