@@ -20,6 +20,9 @@ package de.patrick260.jtexteditor.gui;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
 
 public final class GUI extends JFrame {
 
@@ -27,6 +30,8 @@ public final class GUI extends JFrame {
     private static final int MIN_HEIGHT = 600;
 
     private static final String TITLE = "JTextEditor";
+
+    private final JEditorPane editor;
 
 
     public GUI() {
@@ -82,7 +87,7 @@ public final class GUI extends JFrame {
 
         setJMenuBar(menuBar);
 
-        final JEditorPane editor = new JEditorPane();
+        editor = new JEditorPane();
 
         final JScrollPane scrollPane = new JScrollPane(editor);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
@@ -105,7 +110,22 @@ public final class GUI extends JFrame {
 
     private void openFile(final ActionEvent event) {
 
+        final JFileChooser fileChooser = new JFileChooser();
+        int i = fileChooser.showOpenDialog(this);
 
+        if (i == JFileChooser.APPROVE_OPTION) {
+
+            try {
+
+                editor.setPage(fileChooser.getSelectedFile().toURI().toURL());
+
+            } catch (IOException e) {
+
+                e.printStackTrace();
+
+            }
+
+        }
 
     }
 
