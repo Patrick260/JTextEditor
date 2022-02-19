@@ -141,7 +141,7 @@ public final class GUI extends JFrame {
 
             try {
 
-                FileWriter writer = new FileWriter(saveTo);
+                final FileWriter writer = new FileWriter(saveTo);
                 writer.write(editor.getText());
                 writer.flush();
                 writer.close();
@@ -169,7 +169,7 @@ public final class GUI extends JFrame {
 
             try {
 
-                FileWriter writer = new FileWriter(fileChooser.getSelectedFile());
+                final FileWriter writer = new FileWriter(fileChooser.getSelectedFile());
                 writer.write(editor.getText());
                 writer.flush();
                 writer.close();
