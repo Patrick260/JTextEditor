@@ -97,25 +97,25 @@ public final class GUI extends JFrame {
     }
 
 
-    private void newFile(ActionEvent event) {
+    private void newFile(final ActionEvent event) {
 
 
 
     }
 
-    private void openFile(ActionEvent event) {
+    private void openFile(final ActionEvent event) {
 
 
 
     }
 
-    private void saveFile(ActionEvent event) {
+    private void saveFile(final ActionEvent event) {
 
 
 
     }
 
-    private void saveFileAs(ActionEvent event) {
+    private void saveFileAs(final ActionEvent event) {
 
 
 
