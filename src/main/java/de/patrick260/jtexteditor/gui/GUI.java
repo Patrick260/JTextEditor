@@ -21,6 +21,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 
@@ -137,7 +138,25 @@ public final class GUI extends JFrame {
 
     private void saveFileAs(final ActionEvent event) {
 
+        final JFileChooser fileChooser = new JFileChooser();
+        int i = fileChooser.showSaveDialog(this);
 
+        if (i == JFileChooser.APPROVE_OPTION) {
+
+            try {
+
+                FileWriter writer = new FileWriter(fileChooser.getSelectedFile());
+                writer.write(editor.getText());
+                writer.flush();
+                writer.close();
+
+            } catch (IOException e) {
+
+                e.printStackTrace();
+
+            }
+
+        }
 
     }
 
