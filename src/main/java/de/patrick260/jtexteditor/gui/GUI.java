@@ -15,17 +15,27 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-package de.patrick260.jtexteditor.main;
+package de.patrick260.jtexteditor.gui;
 
-import de.patrick260.jtexteditor.gui.GUI;
+import javax.swing.*;
 
-import java.awt.*;
+public final class GUI extends JFrame {
 
-public final class JTextEditor {
+    private static final int MIN_WIDTH = 800;
+    private static final int MIN_HEIGHT = 600;
 
-    public static void main(final String[] args) {
+    private static final String TITLE = "JTextEditor";
 
-        EventQueue.invokeLater(() -> new GUI().setVisible(true));
+
+    public GUI() {
+
+        setTitle(TITLE);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setResizable(true);
+
+        pack();
+
+        setLocationRelativeTo(null);
 
     }
 
