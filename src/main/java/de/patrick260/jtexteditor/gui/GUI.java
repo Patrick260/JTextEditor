@@ -19,6 +19,7 @@ package de.patrick260.jtexteditor.gui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 public final class GUI extends JFrame {
 
@@ -42,9 +43,16 @@ public final class GUI extends JFrame {
         final JMenu fileMenu = new JMenu("File");
 
         final JMenuItem menuItem_new = new JMenuItem("New");
+        menuItem_new.addActionListener(this::newFile);
+
         final JMenuItem menuItem_open = new JMenuItem("Open");
+        menuItem_open.addActionListener(this::openFile);
+
         final JMenuItem menuItem_save = new JMenuItem("Save");
+        menuItem_save.addActionListener(this::saveFile);
+
         final JMenuItem menuItem_saveAs = new JMenuItem("Save as");
+        menuItem_saveAs.addActionListener(this::saveFileAs);
 
         fileMenu.add(menuItem_new);
         fileMenu.add(menuItem_open);
@@ -85,6 +93,31 @@ public final class GUI extends JFrame {
         pack();
 
         setLocationRelativeTo(null);
+
+    }
+
+
+    private void newFile(ActionEvent event) {
+
+
+
+    }
+
+    private void openFile(ActionEvent event) {
+
+
+
+    }
+
+    private void saveFile(ActionEvent event) {
+
+
+
+    }
+
+    private void saveFileAs(ActionEvent event) {
+
+
 
     }
 
