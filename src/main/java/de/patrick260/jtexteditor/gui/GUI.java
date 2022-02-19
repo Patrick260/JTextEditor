@@ -106,7 +106,9 @@ public final class GUI extends JFrame {
 
     private void newFile(final ActionEvent event) {
 
+        editor.setText(null);
 
+        saveTo = null;
 
     }
 
