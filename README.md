@@ -1,2 +1,1 @@
-# JTextEditor
-A simple text editor written in Java.
+JDK: adopt-openj9-16.0.2
