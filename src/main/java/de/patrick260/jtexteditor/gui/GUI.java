@@ -69,12 +69,25 @@ public final class GUI extends JFrame {
         final JMenu editMenu = new JMenu("Edit");
 
         final JMenuItem menuItem_undo = new JMenuItem("Undo");
+        menuItem_undo.addActionListener(this::undo);
+
         final JMenuItem menuItem_redo = new JMenuItem("Redo");
+        menuItem_redo.addActionListener(this::redo);
+
         final JMenuItem menuItem_cut = new JMenuItem("Cut");
+        menuItem_cut.addActionListener(this::cut);
+
         final JMenuItem menuItem_copy = new JMenuItem("Copy");
+        menuItem_copy.addActionListener(this::copy);
+
         final JMenuItem menuItem_paste = new JMenuItem("Paste");
+        menuItem_paste.addActionListener(this::paste);
+
         final JMenuItem menuItem_delete = new JMenuItem("Delete");
+        menuItem_delete.addActionListener(this::delete);
+
         final JMenuItem menuItem_selectAll = new JMenuItem("Select All");
+        menuItem_selectAll.addActionListener(this::selectAll);
 
         editMenu.add(menuItem_undo);
         editMenu.add(menuItem_redo);
@@ -183,6 +196,48 @@ public final class GUI extends JFrame {
             }
 
         }
+
+    }
+
+    private void undo(final ActionEvent event) {
+
+
+
+    }
+
+    private void redo(final ActionEvent event) {
+
+
+
+    }
+
+    private void cut(final ActionEvent event) {
+
+
+
+    }
+
+    private void copy(final ActionEvent event) {
+
+
+
+    }
+
+    private void paste(final ActionEvent event) {
+
+
+
+    }
+
+    private void delete(final ActionEvent event) {
+
+
+
+    }
+
+    private void selectAll(final ActionEvent event) {
+
+
 
     }
 
