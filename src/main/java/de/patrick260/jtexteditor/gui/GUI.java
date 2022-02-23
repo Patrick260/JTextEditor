@@ -231,7 +231,7 @@ public final class GUI extends JFrame {
 
     private void delete(final ActionEvent event) {
 
-
+        editor.replaceSelection("");
 
     }
 
