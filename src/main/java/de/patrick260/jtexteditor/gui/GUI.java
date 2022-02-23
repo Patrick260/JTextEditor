@@ -19,6 +19,9 @@ package de.patrick260.jtexteditor.gui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.UnsupportedFlavorException;
 import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.FileWriter;
@@ -30,6 +33,8 @@ public final class GUI extends JFrame {
     private static final int MIN_HEIGHT = 600;
 
     private static final String TITLE = "JTextEditor";
+
+    private final Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 
     private final JEditorPane editor;
 
@@ -225,7 +230,15 @@ public final class GUI extends JFrame {
 
     private void paste(final ActionEvent event) {
 
+        try {
 
+            editor.replaceSelection(String.valueOf(clipboard.getData(DataFlavor.stringFlavor)));
+
+        } catch (UnsupportedFlavorException | IOException e) {
+
+            e.printStackTrace();
+
+        }
 
     }
 
