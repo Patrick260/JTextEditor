@@ -219,7 +219,8 @@ public final class GUI extends JFrame {
 
     private void cut(final ActionEvent event) {
 
-
+        clipboard.setContents(new StringSelection(editor.getSelectedText()), null);
+        editor.replaceSelection("");
 
     }
 
