@@ -237,7 +237,7 @@ public final class GUI extends JFrame {
 
     private void selectAll(final ActionEvent event) {
 
-
+        editor.selectAll();
 
     }
 
