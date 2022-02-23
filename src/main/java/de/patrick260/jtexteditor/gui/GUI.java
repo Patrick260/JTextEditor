@@ -21,6 +21,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.awt.event.ActionEvent;
 import java.io.File;
@@ -224,7 +225,7 @@ public final class GUI extends JFrame {
 
     private void copy(final ActionEvent event) {
 
-
+        clipboard.setContents(new StringSelection(editor.getSelectedText()), null);
 
     }
 
