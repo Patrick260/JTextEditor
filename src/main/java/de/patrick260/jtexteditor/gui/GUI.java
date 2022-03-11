@@ -134,9 +134,9 @@ public final class GUI extends JFrame {
     private void openFile(final ActionEvent event) {
 
         final JFileChooser fileChooser = new JFileChooser();
-        int i = fileChooser.showOpenDialog(this);
+        final int action = fileChooser.showOpenDialog(this);
 
-        if (i == JFileChooser.APPROVE_OPTION) {
+        if (action == JFileChooser.APPROVE_OPTION) {
 
             try {
 
@@ -144,9 +144,9 @@ public final class GUI extends JFrame {
 
                 saveTo = fileChooser.getSelectedFile();
 
-            } catch (IOException e) {
+            } catch (final IOException exception) {
 
-                e.printStackTrace();
+                exception.printStackTrace();
 
             }
 
@@ -165,9 +165,9 @@ public final class GUI extends JFrame {
                 writer.flush();
                 writer.close();
 
-            } catch (IOException e) {
+            } catch (final IOException exception) {
 
-                e.printStackTrace();
+                exception.printStackTrace();
 
             }
 
@@ -182,24 +182,13 @@ public final class GUI extends JFrame {
     private void saveFileAs(final ActionEvent event) {
 
         final JFileChooser fileChooser = new JFileChooser();
-        int i = fileChooser.showSaveDialog(this);
+        final int action = fileChooser.showSaveDialog(this);
 
-        if (i == JFileChooser.APPROVE_OPTION) {
+        if (action == JFileChooser.APPROVE_OPTION) {
 
-            try {
+            saveTo = fileChooser.getSelectedFile();
 
-                final FileWriter writer = new FileWriter(fileChooser.getSelectedFile());
-                writer.write(editor.getText());
-                writer.flush();
-                writer.close();
-
-                saveTo = fileChooser.getSelectedFile();
-
-            } catch (IOException e) {
-
-                e.printStackTrace();
-
-            }
+            saveFile(event);
 
         }
 
@@ -236,9 +225,9 @@ public final class GUI extends JFrame {
 
             editor.replaceSelection(String.valueOf(clipboard.getData(DataFlavor.stringFlavor)));
 
-        } catch (UnsupportedFlavorException | IOException e) {
+        } catch (final UnsupportedFlavorException | IOException exception) {
 
-            e.printStackTrace();
+            exception.printStackTrace();
 
         }
 
