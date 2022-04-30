@@ -52,6 +52,26 @@ public final class GUI extends JFrame {
         setExtendedState(JFrame.MAXIMIZED_BOTH);
 
         final JMenuBar menuBar = new JMenuBar();
+        menuBar.add(buildFileMenu());
+        menuBar.add(buildEditMenu());
+
+        setJMenuBar(menuBar);
+
+        editor = new JEditorPane();
+
+        final JScrollPane scrollPane = new JScrollPane(editor);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+
+        add(scrollPane);
+
+        pack();
+
+        setLocationRelativeTo(null);
+
+    }
+
+    private JMenu buildFileMenu() {
 
         final JMenu fileMenu = new JMenu("File");
 
@@ -71,6 +91,12 @@ public final class GUI extends JFrame {
         fileMenu.add(menuItem_open);
         fileMenu.add(menuItem_save);
         fileMenu.add(menuItem_saveAs);
+
+        return fileMenu;
+
+    }
+
+    private JMenu buildEditMenu() {
 
         final JMenu editMenu = new JMenu("Edit");
 
@@ -103,22 +129,7 @@ public final class GUI extends JFrame {
         editMenu.add(menuItem_delete);
         editMenu.add(menuItem_selectAll);
 
-        menuBar.add(fileMenu);
-        menuBar.add(editMenu);
-
-        setJMenuBar(menuBar);
-
-        editor = new JEditorPane();
-
-        final JScrollPane scrollPane = new JScrollPane(editor);
-        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-
-        add(scrollPane);
-
-        pack();
-
-        setLocationRelativeTo(null);
+        return editMenu;
 
     }
 
