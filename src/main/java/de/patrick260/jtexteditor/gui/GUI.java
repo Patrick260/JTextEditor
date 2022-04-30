@@ -78,22 +78,22 @@ public final class GUI extends JFrame {
 
         final JMenu fileMenu = new JMenu("File");
 
-        final JMenuItem menuItem_new = new JMenuItem("New");
-        menuItem_new.addActionListener(this::newFile);
+        final JMenuItem newFile = new JMenuItem("New");
+        newFile.addActionListener(this::newFile);
 
-        final JMenuItem menuItem_open = new JMenuItem("Open");
-        menuItem_open.addActionListener(this::openFile);
+        final JMenuItem open = new JMenuItem("Open");
+        open.addActionListener(this::openFile);
 
-        final JMenuItem menuItem_save = new JMenuItem("Save");
-        menuItem_save.addActionListener(this::saveFile);
+        final JMenuItem save = new JMenuItem("Save");
+        save.addActionListener(this::saveFile);
 
-        final JMenuItem menuItem_saveAs = new JMenuItem("Save as");
-        menuItem_saveAs.addActionListener(this::saveFileAs);
+        final JMenuItem saveAs = new JMenuItem("Save as");
+        saveAs.addActionListener(this::saveFileAs);
 
-        fileMenu.add(menuItem_new);
-        fileMenu.add(menuItem_open);
-        fileMenu.add(menuItem_save);
-        fileMenu.add(menuItem_saveAs);
+        fileMenu.add(newFile);
+        fileMenu.add(open);
+        fileMenu.add(save);
+        fileMenu.add(saveAs);
 
         return fileMenu;
 
@@ -103,34 +103,34 @@ public final class GUI extends JFrame {
 
         final JMenu editMenu = new JMenu("Edit");
 
-        final JMenuItem menuItem_undo = new JMenuItem("Undo");
-        menuItem_undo.addActionListener(this::undo);
+        final JMenuItem undo = new JMenuItem("Undo");
+        undo.addActionListener(this::undo);
 
-        final JMenuItem menuItem_redo = new JMenuItem("Redo");
-        menuItem_redo.addActionListener(this::redo);
+        final JMenuItem redo = new JMenuItem("Redo");
+        redo.addActionListener(this::redo);
 
-        final JMenuItem menuItem_cut = new JMenuItem("Cut");
-        menuItem_cut.addActionListener(this::cut);
+        final JMenuItem cut = new JMenuItem("Cut");
+        cut.addActionListener(this::cut);
 
-        final JMenuItem menuItem_copy = new JMenuItem("Copy");
-        menuItem_copy.addActionListener(this::copy);
+        final JMenuItem copy = new JMenuItem("Copy");
+        copy.addActionListener(this::copy);
 
-        final JMenuItem menuItem_paste = new JMenuItem("Paste");
-        menuItem_paste.addActionListener(this::paste);
+        final JMenuItem paste = new JMenuItem("Paste");
+        paste.addActionListener(this::paste);
 
-        final JMenuItem menuItem_delete = new JMenuItem("Delete");
-        menuItem_delete.addActionListener(this::delete);
+        final JMenuItem delete = new JMenuItem("Delete");
+        delete.addActionListener(this::delete);
 
-        final JMenuItem menuItem_selectAll = new JMenuItem("Select All");
-        menuItem_selectAll.addActionListener(this::selectAll);
+        final JMenuItem selectAll = new JMenuItem("Select All");
+        selectAll.addActionListener(this::selectAll);
 
-        editMenu.add(menuItem_undo);
-        editMenu.add(menuItem_redo);
-        editMenu.add(menuItem_cut);
-        editMenu.add(menuItem_copy);
-        editMenu.add(menuItem_paste);
-        editMenu.add(menuItem_delete);
-        editMenu.add(menuItem_selectAll);
+        editMenu.add(undo);
+        editMenu.add(redo);
+        editMenu.add(cut);
+        editMenu.add(copy);
+        editMenu.add(paste);
+        editMenu.add(delete);
+        editMenu.add(selectAll);
 
         return editMenu;
 
