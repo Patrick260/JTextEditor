@@ -25,6 +25,7 @@ import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -83,18 +84,23 @@ public final class GUI extends JFrame {
 
         final JMenuItem newFile = new JMenuItem("New");
         newFile.addActionListener(this::newFile);
+        newFile.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, KeyEvent.CTRL_DOWN_MASK));
 
         final JMenuItem open = new JMenuItem("Open");
         open.addActionListener(this::openFile);
+        open.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, KeyEvent.CTRL_DOWN_MASK));
 
         final JMenuItem save = new JMenuItem("Save");
         save.addActionListener(this::saveFile);
+        save.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.CTRL_DOWN_MASK));
 
         final JMenuItem saveAs = new JMenuItem("Save as");
         saveAs.addActionListener(this::saveFileAs);
+        saveAs.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.CTRL_DOWN_MASK | KeyEvent.SHIFT_DOWN_MASK));
 
         final JMenuItem quit = new JMenuItem("Quit");
         quit.addActionListener(this::quit);
+        quit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, KeyEvent.CTRL_DOWN_MASK));
 
         fileMenu.add(newFile);
         fileMenu.add(open);
