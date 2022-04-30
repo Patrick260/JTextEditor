@@ -131,10 +131,12 @@ public final class GUI extends JFrame {
 
         editMenu.add(undo);
         editMenu.add(redo);
+        editMenu.addSeparator();
         editMenu.add(cut);
         editMenu.add(copy);
         editMenu.add(paste);
         editMenu.add(delete);
+        editMenu.addSeparator();
         editMenu.add(selectAll);
 
         return editMenu;
