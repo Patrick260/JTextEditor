@@ -90,10 +90,15 @@ public final class GUI extends JFrame {
         final JMenuItem saveAs = new JMenuItem("Save as");
         saveAs.addActionListener(this::saveFileAs);
 
+        final JMenuItem quit = new JMenuItem("Quit");
+        quit.addActionListener(this::quit);
+
         fileMenu.add(newFile);
         fileMenu.add(open);
         fileMenu.add(save);
         fileMenu.add(saveAs);
+        fileMenu.addSeparator();
+        fileMenu.add(quit);
 
         return fileMenu;
 
@@ -215,6 +220,12 @@ public final class GUI extends JFrame {
             saveFile(event);
 
         }
+
+    }
+
+    private void quit(final ActionEvent event) {
+
+        System.exit(0);
 
     }
 
