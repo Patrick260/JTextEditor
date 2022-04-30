@@ -119,24 +119,30 @@ public final class GUI extends JFrame {
 
         final JMenuItem undo = new JMenuItem("Undo");
         undo.addActionListener(this::undo);
+        undo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, KeyEvent.CTRL_DOWN_MASK));
 
         final JMenuItem redo = new JMenuItem("Redo");
         redo.addActionListener(this::redo);
+        redo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, KeyEvent.CTRL_DOWN_MASK | KeyEvent.SHIFT_DOWN_MASK));
 
         final JMenuItem cut = new JMenuItem("Cut");
         cut.addActionListener(this::cut);
+        cut.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, KeyEvent.CTRL_DOWN_MASK));
 
         final JMenuItem copy = new JMenuItem("Copy");
         copy.addActionListener(this::copy);
+        copy.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, KeyEvent.CTRL_DOWN_MASK));
 
         final JMenuItem paste = new JMenuItem("Paste");
         paste.addActionListener(this::paste);
+        paste.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, KeyEvent.CTRL_DOWN_MASK));
 
         final JMenuItem delete = new JMenuItem("Delete");
         delete.addActionListener(this::delete);
 
         final JMenuItem selectAll = new JMenuItem("Select All");
         selectAll.addActionListener(this::selectAll);
+        selectAll.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.CTRL_DOWN_MASK));
 
         editMenu.add(undo);
         editMenu.add(redo);
