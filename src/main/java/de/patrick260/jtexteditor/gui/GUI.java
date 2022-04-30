@@ -242,7 +242,7 @@ public final class GUI extends JFrame {
 
     private void redo(final ActionEvent event) {
 
-
+        undoManager.redo();
 
     }
 
