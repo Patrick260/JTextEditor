@@ -18,6 +18,7 @@
 package de.patrick260.jtexteditor.gui;
 
 import javax.swing.*;
+import javax.swing.undo.UndoManager;
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
@@ -38,6 +39,7 @@ public final class GUI extends JFrame {
     private final Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 
     private final JEditorPane editor;
+    private final UndoManager undoManager = new UndoManager();
 
     private File saveTo;
 
@@ -54,6 +56,7 @@ public final class GUI extends JFrame {
         setJMenuBar(buildMenuBar());
 
         editor = new JEditorPane();
+        editor.getDocument().addUndoableEditListener(undoManager);
 
         add(buildScrollPane());
 
@@ -233,7 +236,7 @@ public final class GUI extends JFrame {
 
     private void undo(final ActionEvent event) {
 
-
+        undoManager.undo();
 
     }
 
