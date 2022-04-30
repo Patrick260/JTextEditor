@@ -55,11 +55,7 @@ public final class GUI extends JFrame {
 
         editor = new JEditorPane();
 
-        final JScrollPane scrollPane = new JScrollPane(editor);
-        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-
-        add(scrollPane);
+        add(buildScrollPane());
 
         pack();
 
@@ -136,6 +132,16 @@ public final class GUI extends JFrame {
         editMenu.add(menuItem_selectAll);
 
         return editMenu;
+
+    }
+
+    private JScrollPane buildScrollPane() {
+
+        final JScrollPane scrollPane = new JScrollPane(editor);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+
+        return scrollPane;
 
     }
 
