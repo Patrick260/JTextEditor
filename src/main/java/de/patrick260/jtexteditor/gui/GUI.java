@@ -63,6 +63,7 @@ public final class GUI extends JFrame {
 
     }
 
+
     private JMenuBar buildMenuBar() {
 
         final JMenuBar menuBar = new JMenuBar();
