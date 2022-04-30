@@ -51,11 +51,7 @@ public final class GUI extends JFrame {
         setMinimumSize(new Dimension(MIN_WIDTH, MIN_HEIGHT));
         setExtendedState(JFrame.MAXIMIZED_BOTH);
 
-        final JMenuBar menuBar = new JMenuBar();
-        menuBar.add(buildFileMenu());
-        menuBar.add(buildEditMenu());
-
-        setJMenuBar(menuBar);
+        setJMenuBar(buildMenuBar());
 
         editor = new JEditorPane();
 
@@ -68,6 +64,16 @@ public final class GUI extends JFrame {
         pack();
 
         setLocationRelativeTo(null);
+
+    }
+
+    private JMenuBar buildMenuBar() {
+
+        final JMenuBar menuBar = new JMenuBar();
+        menuBar.add(buildFileMenu());
+        menuBar.add(buildEditMenu());
+
+        return menuBar;
 
     }
 
